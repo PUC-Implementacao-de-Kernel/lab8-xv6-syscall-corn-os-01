@@ -7,6 +7,8 @@
 #include "syscall.h"
 #include "defs.h"
 
+extern uint64 sys_trace(void);
+
 // Fetch the uint64 at addr from the current process.
 int
 fetchaddr(uint64 addr, uint64 *ip)

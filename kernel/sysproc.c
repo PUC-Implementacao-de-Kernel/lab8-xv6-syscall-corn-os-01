@@ -107,3 +107,19 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+uint64
+sys_trace(void)
+{
+  int mask;
+
+  /* TODO 1: leia o argumento inteiro usando argint(0, &mask). */
+  argint(0, &mask);
+  /* TODO 2: salve mask no campo trace_mask do processo atual. */
+  struct proc *curr_proc;
+  curr_proc = myproc();
+  curr_proc->trace_mask = mask;  
+  
+  /* TODO 3: retorne 0. */
+  return 0;
+}
